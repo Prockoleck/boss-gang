@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSS GANG - Join the Family</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="logo-emblem">
+                <img src="boss-gang-logo.png" alt="Boss Gang Logo" class="logo-img">
+            </div>
+            <h1 class="gang-name">
+                <span class="the">THE</span>
+                <span class="boss">BOSS</span>
+                <span class="gang">GANG</span>
+            </h1>
+            <p class="tagline">BROTHERHOOD &bull; LOYALTY &bull; RESPECT</p>
+            <div class="divider">
+                <span class="line"></span>
+                <span class="cross">&#9876;</span>
+                <span class="line"></span>
+            </div>
+            <p class="subtitle">"Once you're in, you're family forever."</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL DOWN</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- 3D Gun Section -->
+    <section class="gun-showcase">
+        <h2 class="section-title">LOCKED & LOADED</h2>
+        <div class="sketchfab-embed">
+            <iframe title="Desert Eagle 3D Model" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen 
+                width="100%" height="500"
+                src="https://sketchfab.com/models/cabde59f5cf24effaf80536e35d04e95/embed?autostart=1&ui_theme=dark&dnt=1&transparent=1&ui_controls=0&ui_infos=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotation=0&ui_spin=0&camera=0&zoom=0&loadinganim=0&sound=0&ui_watermark=0&ui_watermark_link=0"
+                loading="lazy"
+                allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share>
+            </iframe>
+        </div>
+        <p class="gun-caption">Interactive 3D Model &mdash; Drag to rotate, scroll to zoom</p>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="rules-section">
+        <h2 class="section-title">THE CODE</h2>
+        <div class="rules-grid">
+            <div class="rule-card" data-delay="0">
+                <div class="rule-number">01</div>
+                <div class="rule-icon">&#9876;</div>
+                <h3>LOYALTY IS EVERYTHING</h3>
+                <p>Betray the gang, and you're out. No second chances. No exceptions.</p>
+            </div>
+            <div class="rule-card" data-delay="1">
+                <div class="rule-number">02</div>
+                <div class="rule-icon">&#9876;</div>
+                <h3>RESPECT THE HIERARCHY</h3>
+                <p>The Boss speaks. The street soldiers listen. That's how we stay strong.</p>
+            </div>
+            <div class="rule-card" data-delay="2">
+                <div class="rule-number">03</div>
+                <div class="rule-icon">&#9876;</div>
+                <h3>NO SNITCHING</h3>
+                <p>What happens on the street, stays on the street. Period.</p>
+            </div>
+            <div class="rule-card" data-delay="3">
+                <div class="rule-number">04</div>
+                <div class="rule-icon">&#9876;</div>
+                <h3>PROTECT YOUR CREW</h3>
+                <p>Your brothers are your blood. We rise together or fall together.</p>
+            </div>
+            <div class="rule-card" data-delay="4">
+                <div class="rule-number">05</div>
+                <div class="rule-icon">&#9876;</div>
+                <h3>EARN YOUR STRIPES</h3>
+                <p>Nobody hands you respect. You take it. You prove it. Every. Single. Day.</p>
+            </div>
+            <div class="rule-card" data-delay="5">
+                <div class="rule-number">06</div>
+                <div class="rule-icon">&#9876;</div>
+                <h3>BSG OR NOTHING</h3>
+                <p>You rep the colors. You live the life. Boss Gang forever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Form Section -->
+    <section class="join-section" id="join">
+        <h2 class="section-title">JOIN THE FAMILY</h2>
+        <p class="join-subtitle">Fill out the form below. The Boss will review your application.</p>
+        
+        <form class="gang-form" id="gangForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="realName">REAL NAME</label>
+                    <input type="text" id="realName" placeholder="Your government name" required>
+                </div>
+                <div class="form-group">
+                    <label for="streetName">STREET NAME</label>
+                    <input type="text" id="streetName" placeholder="Your gang alias" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age">AGE</label>
+                    <input type="number" id="age" placeholder="How old are you" min="10" max="99" required>
+                </div>
+                <div class="form-group">
+                    <label for="district">DISTRICT</label>
+                    <select id="district" required>
+                        <option value="">Select your turf</option>
+                        <option value="north">North Side</option>
+                        <option value="south">South Side</option>
+                        <option value="east">East End</option>
+                        <option value="west">West Block</option>
+                        <option value="central">Central</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">YOUR SKILLS</label>
+                <input type="text" id="skills" placeholder="What do you bring to the crew?">
+            </div>
+
+            <div class="form-group">
+                <label for="motto">YOUR MOTTO</label>
+                <input type="text" id="motto" placeholder="Your personal code to live by">
+            </div>
+
+            <div class="form-group">
+                <label for="why">WHY BSG?</label>
+                <textarea id="why" rows="4" placeholder="Tell us why you want to be part of the Boss Gang..." required></textarea>
+            </div>
+
+            <div class="oath-box">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="oath" required>
+                    <span class="checkmark"></span>
+                    <span class="oath-text">I swear loyalty to THE BOSS GANG. I will follow the code. I will protect my brothers. I understand there is no turning back.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">SUBMIT APPLICATION</span>
+                <span class="btn-icon">&#9876;</span>
+            </button>
+        </form>
+    </section>
+
+    <!-- Membership Card (Hidden by default) -->
+    <div class="membership-card" id="membershipCard">
+        <div class="card-inner">
+            <div class="card-header">
+                <span class="card-logo">&#9876;</span>
+                <span class="card-title">BOSS GANG</span>
+                <span class="card-logo">&#9876;</span>
+            </div>
+            <div class="card-body">
+                <div class="card-photo">
+                    <div class="card-avatar" id="cardAvatar">BG</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-field">
+                        <span class="card-label">NAME</span>
+                        <span class="card-value" id="cardName">---</span>
+                    </div>
+                    <div class="card-field">
+                        <span class="card-label">ALIAS</span>
+                        <span class="card-value" id="cardAlias">---</span>
+                    </div>
+                    <div class="card-field">
+                        <span class="card-label">RANK</span>
+                        <span class="card-value" id="cardRank">NEW RECRUIT</span>
+                    </div>
+                    <div class="card-field">
+                        <span class="card-label">MEMBER #</span>
+                        <span class="card-value" id="cardNumber">0000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span>EST. 2026</span>
+                <span class="card-id" id="cardId">BSG-XXXX</span>
+                <span>BOSS GANG OR NOTHING</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">&#9876; BSG &#9876;</div>
+            <p class="footer-text">THE BOSS GANG &copy; 2026 &mdash; ALL RIGHTS RESERVED</p>
+            <p class="footer-motto">"We are the street. The street is us."</p>
+        </div>
+    </footer>
+
+    <!-- Success Overlay -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-content">
+            <div class="success-icon">&#9876;</div>
+            <h2>APPLICATION SUBMITTED</h2>
+            <p>The Boss has received your request. Await your initiation.</p>
+            <button class="close-btn" id="closeSuccess">VIEW YOUR MEMBERSHIP CARD</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
