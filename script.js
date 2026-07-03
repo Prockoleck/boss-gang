@@ -132,6 +132,10 @@ function initForm() {
             membershipCard.classList.remove('active');
         }
     });
+
+    document.getElementById('cardClose').addEventListener('click', () => {
+        membershipCard.classList.remove('active');
+    });
 }
 
 function generateMembershipCard() {
