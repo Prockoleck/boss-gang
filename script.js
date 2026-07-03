@@ -38,6 +38,36 @@ function initScrollAnimations() {
 }
 
 // ============================
+// DISCORD WEBHOOK
+// ============================
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1522559396960538765/U-mxG9_BxgkgissCPABW5SKZe1tz3UtkiPlF_wSgoz3MYn0nJj74dEnwvhpY3-RmkegY';
+
+async function sendToDiscord(data) {
+    const embed = {
+        title: 'NEW BSG APPLICATION',
+        color: 0xcc0000,
+        thumbnail: { url: 'https://boss-gang.vercel.app/boss-gang-logo.png' },
+        fields: [
+            { name: 'REAL NAME', value: data.realName, inline: true },
+            { name: 'STREET NAME', value: data.streetName, inline: true },
+            { name: 'AGE', value: data.age, inline: true },
+            { name: 'DISTRICT', value: data.district, inline: true },
+            { name: 'MOBILE', value: data.mobile, inline: true },
+            { name: 'SKILLS', value: data.skills || 'None', inline: true },
+            { name: 'WHY BSG?', value: data.why }
+        ],
+        footer: { text: 'BOSS GANG RECRUITMENT' },
+        timestamp: new Date().toISOString()
+    };
+
+    await fetch(DISCORD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ embeds: [embed] })
+    });
+}
+
+// ============================
 // FORM HANDLING
 // ============================
 function initForm() {
@@ -47,7 +77,7 @@ function initForm() {
     const closeSuccess = document.getElementById('closeSuccess');
     const membershipCard = document.getElementById('membershipCard');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Validate oath
@@ -64,17 +94,32 @@ function initForm() {
         document.body.classList.add('screen-shake');
         setTimeout(() => document.body.classList.remove('screen-shake'), 500);
 
-        // Simulate processing
-        setTimeout(() => {
-            submitBtn.classList.remove('loading');
-            submitBtn.querySelector('.btn-text').textContent = 'SUBMIT APPLICATION';
+        // Collect form data
+        const formData = {
+            realName: document.getElementById('realName').value.toUpperCase(),
+            streetName: document.getElementById('streetName').value.toUpperCase(),
+            age: document.getElementById('age').value,
+            district: document.getElementById('district').options[document.getElementById('district').selectedIndex].text,
+            mobile: document.getElementById('mobile').value,
+            skills: document.getElementById('skills').value.toUpperCase(),
+            why: document.getElementById('why').value
+        };
 
-            // Generate membership card
-            generateMembershipCard();
+        // Send to Discord
+        try {
+            await sendToDiscord(formData);
+        } catch (err) {
+            console.error('Discord webhook failed:', err);
+        }
 
-            // Show success
-            successOverlay.classList.add('active');
-        }, 2200);
+        submitBtn.classList.remove('loading');
+        submitBtn.querySelector('.btn-text').textContent = 'SUBMIT APPLICATION';
+
+        // Generate membership card
+        generateMembershipCard();
+
+        // Show success
+        successOverlay.classList.add('active');
     });
 
     closeSuccess.addEventListener('click', () => {
